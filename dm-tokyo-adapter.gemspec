@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
      "lib/dm-tokyo-adapter/cabinet.rb",
      "lib/dm-tokyo-adapter/query.rb",
      "lib/dm-tokyo-adapter/tyrant.rb",
+     "lib/dm-tokyo-adapter/version.rb",
      "test/helper.rb",
      "test/test_cabinet.rb",
      "test/test_query.rb",
