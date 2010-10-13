@@ -4,3 +4,4 @@ pkg/*
 .idea/
 vendor/
 Gemfile.lock
+test/tc/*

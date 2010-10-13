@@ -5,6 +5,7 @@ require 'shoulda'
 
 $:.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 
+require 'dm-migrations'
 require 'dm-tokyo-adapter'
 
 class Test::Unit::TestCase
@@ -16,6 +17,8 @@ DataMapper.setup(:default, {
   :database => 'tc',
   :path     => File.dirname(__FILE__)
 })
+
+DataMapper.setup(:sqlite, 'sqlite::memory:')
 
 class Test::Unit::TestCase
   include Extlib::Hook

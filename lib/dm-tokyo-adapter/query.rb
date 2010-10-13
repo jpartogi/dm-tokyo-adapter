@@ -60,7 +60,7 @@ module DataMapper
         private
           def condition_statement(statements, conditions, affirmative = true)
             case conditions
-              when AbstractOperation  then operation_statement(statements, conditions, affrimative)
+              when AbstractOperation  then operation_statement(statements, conditions, affirmative)
               when AbstractComparison then comparison_statement(statements, conditions, affirmative)
             end
           end
@@ -75,7 +75,7 @@ module DataMapper
 
           def comparison_statement(statements, comparison, affirmative = true)
             subject   = comparison.subject
-            primitive = subject.primitive
+            primitive = subject.primitive unless subject.kind_of?(DataMapper::Associations::Relationship)
             value     = comparison.value.kind_of?(DataMapper::Resource) ?
               comparison.value[comparison.value.class.serial.name] :
               comparison.value

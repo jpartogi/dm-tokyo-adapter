@@ -63,5 +63,81 @@ class AdapterTest < Test::Unit::TestCase
         assert_equal @user, User.get(*@user.key)
       end
     end
+
+    context 'Relationship same db' do
+      setup do
+        class ::User
+          include DataMapper::Resource
+
+          has n, :comments
+
+          property :id, Serial
+          property :name, String
+        end
+        class ::Comment
+          include DataMapper::Resource
+
+          belongs_to :user
+
+          property :id, Serial
+          property :content, String
+        end
+      end
+
+      should 'map object' do
+        @user= User.create(:name => 'Joe')
+        @comment= Comment.create(:content => 'Foo')
+
+        @user.comments << @comment
+        @user.save
+
+        assert_equal 1, @user.comments.length
+      end
+      
+      teardown do
+        User.all.destroy
+        Comment.all.destroy
+      end
+    end
+
+    context 'Relationship different db' do
+      setup do
+        class ::User
+          include DataMapper::Resource
+
+          has n, :comments
+
+          property :id, Serial
+          property :name, String
+        end
+        class ::Comment
+          include DataMapper::Resource
+
+          def self.default_repository_name
+            :sqlite
+          end
+          belongs_to :user
+
+          property :id, Serial
+          property :content, String
+        end
+        DataMapper.auto_migrate!(:sqlite)        
+      end
+
+      should 'map object' do
+        @user= User.create(:name => 'Joe')
+        @comment= Comment.create(:content => 'Foo')
+
+        @user.comments << @comment
+        @user.save
+
+        assert_equal 1, @user.comments.length
+      end
+
+      teardown do
+        User.all.destroy
+        Comment.all.destroy
+      end
+    end
   end
 end
