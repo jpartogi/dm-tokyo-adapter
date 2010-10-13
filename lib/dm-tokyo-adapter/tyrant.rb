@@ -1,6 +1,3 @@
-require 'dm-tokyo-adapter/cabinet'
-require 'rufus/tokyo/tyrant'
-
 module DataMapper
   module Adapters
     module Tokyo

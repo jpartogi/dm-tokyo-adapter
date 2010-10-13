@@ -1,6 +1,3 @@
-require 'dm-core'
-require 'rufus/tokyo'
-
 module DataMapper
   module Adapters
     module Tokyo
