@@ -1,6 +1,6 @@
 = DataMapper Tokyo Cabinet/Tyrant Table Store Adapter
 
-* http://github.com/shanna/dm-tokyo-adapter/tree/master
+* http://github.com/scrum8/dm-tokyo-adapter/tree/master
 
 == Description
 
@@ -17,18 +17,19 @@ delete properties.
 == Dependencies
 
 Ruby::
-* dm-core     ~> 0.10.0
-* rufus-tokyo ~> 0.1.12
+* dm-core     >= 1.0.2
+* rufus-tokyo >= 1.0.7
+* addressable >= 2.2.2
 
 == Install
 
 * Via gem:
 
-    gem install shanna-dm-tokyo-adapter -s http://gems.github.com
+    gem install dm-tokyo-adapter
 
 * Via git:
 
-    git clone git://github.com/shanna/dm-tokyo-adapter.git
+    git clone git://github.com/scrum8/dm-tokyo-adapter.git
     rake install
 
 == Synopsis
@@ -83,4 +84,7 @@ Go nuts. Just send me a pull request (github or otherwise) when you are happy wi
 
 == Copyright
 
-Copyright (c) 2009 "Shane Hanna". See LICENSE for details.
+Copyright (c) 2009 "Shane Hanna".
+Copyright (c) 2010 "Joshua Partogi". 
+
+See LICENSE for details.
