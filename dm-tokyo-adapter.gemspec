@@ -5,9 +5,9 @@ Gem::Specification.new do |s|
   s.version = "0.4.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Shane Hanna"]
-  s.date = %q{2009-08-09 2010-10-14}
-  s.email = %q{shane.hanna@gmail.com joshua.partogi@gmail.com}
+  s.authors = ["Joshua Partogi", "Shane Hanna"]
+  s.date = %q{2010-10-14 2009-08-09}
+  s.email = %q{joshua.partogi@gmail.com shane.hanna@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE",
      "README.rdoc"
@@ -29,7 +29,7 @@ Gem::Specification.new do |s|
      "test/test_query.rb",
      "test/test_tyrant.rb"
   ]
-  s.homepage = %q{http://github.com/shanna/dm-tokyo-adapter}
+  s.homepage = %q{http://github.com/scrum8/dm-tokyo-adapter}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.4}
